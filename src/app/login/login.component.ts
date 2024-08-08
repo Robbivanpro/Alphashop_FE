@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  titolo: string = "Inserisci la Tua Userid e Password";
+  sottotitolo: string = "Solo gli utenti autorizzati possono accedere a questa applicazione";
 
   userId: string = "Nicola";
   password: string = "";
