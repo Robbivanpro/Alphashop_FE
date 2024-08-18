@@ -1,13 +1,15 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ArticoliComponent } from './articoli/articoli.component';
+import { ArticoliComponent } from './pages/articoli/articoli.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from './core/core.module';
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from './pages/error/error.component';
 import { FormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LogoutComponent } from './pages/logout/logout.component';
 import { NgModule } from '@angular/core';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { GridArticoliComponent } from './pages/grid-articoli/grid-articoli.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
     WelcomeComponent,
     LoginComponent,
     ErrorComponent,
-    ArticoliComponent
+    ArticoliComponent,
+    LogoutComponent,
+    GridArticoliComponent
   ],
   imports: [
     BrowserModule,
