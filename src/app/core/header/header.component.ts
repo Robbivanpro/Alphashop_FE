@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+
+import { AuthappService } from 'src/services/authapp.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-
-  constructor(private route: ActivatedRoute) { }
+  constructor(public BasicAuth: AuthappService) { }
 
   ngOnInit(): void {
-   
   }
 
 }
