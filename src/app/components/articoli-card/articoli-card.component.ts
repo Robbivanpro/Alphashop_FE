@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { IArticoli } from 'src/app/models/Articoli';
 
 @Component({
@@ -11,22 +12,20 @@ export class ArticoliCardComponent implements OnInit {
   constructor() { }
 
   @Input()
-  articolo: IArticoli =
-    {
-      codart: '',
-      descrizione: '',
-      um: '',
-      pzcart: 0,
-      peso: 0,
-      prezzo: 0,
-      active: true,
-      data: new Date(),
-      imageUrl: '',
-    }
-    
-    @Output()
-  delete = new EventEmitter();
+  articolo: IArticoli  = {
+    codart: '',
+    descrizione: '',
+    um: '',
+    pzcart: 0,
+    peso: 0,
+    prezzo: 0,
+    active: true,
+    data: new Date(),
+    imageUrl: ''
+  };
 
+  @Output()
+  delete = new EventEmitter();
   @Output()
   edit = new EventEmitter();
 
@@ -34,6 +33,6 @@ export class ArticoliCardComponent implements OnInit {
   }
 
   editArt = () => this.edit.emit(this.articolo.codart);
-  deleteArt = () => this.delete.emit(this.articolo.codart);
+  delArt = () => this.delete.emit(this.articolo.codart);
 
 }

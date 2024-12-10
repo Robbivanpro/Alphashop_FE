@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
 import { IArticoli } from 'src/app/models/Articoli';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticoliService {
+
   articoli: IArticoli[]  = [
     {codart : '014600301', descrizione : 'BARILLA FARINA 1 KG', um : 'PZ', pzcart : 24, peso : 1, prezzo : 1.09, active : true, data : new Date(), imageUrl: 'assets/images/prodotti/014600301.jpg'},
     {codart : "013500121", descrizione : "BARILLA PASTA GR.500 N.70 1/2 PENNE", um : "PZ", pzcart : 30, peso : 0.5, prezzo : 1.3, active : true, data : new Date(), imageUrl: 'assets/images/prodotti/013500121.jpg'},
@@ -15,11 +16,12 @@ export class ArticoliService {
   ]
   constructor() { }
 
-  getArticoli= (): IArticoli[] => this.articoli;
+  getArticoli = () : IArticoli[] => this.articoli;
 
-  getArticoloByCode = (codart: string): IArticoli => 
-    {
-      const index = this.articoli.findIndex(articoli => articoli.codart === codart);
-      return this.articoli[index];
-    }
+  getArticoliByCode = (codart: string) : IArticoli => {
+
+    const index = this.articoli.findIndex(articoli => articoli.codart === codart);
+    return this.articoli[index];
+
   }
+}

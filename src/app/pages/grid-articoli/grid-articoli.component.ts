@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IArticoli } from 'src/app/models/Articoli';
+
 import { ArticoliService } from 'src/services/articoli.service';
+import { IArticoli } from 'src/app/models/Articoli';
 
 @Component({
   selector: 'app-grid-articoli',
@@ -13,23 +14,25 @@ export class GridArticoliComponent implements OnInit {
 
   constructor(private articoliService: ArticoliService) { }
 
-  ngOnInit(): void 
-  {
+  ngOnInit(): void {
+
     this.articoli$ = this.articoliService.getArticoli();
     console.log(this.articoli$);
+
   }
 
-  handleEdit =(codart:string ) => 
-    {
-      console.log("Cliccato tasto Modifica del codice: ", codart);
-    }
+  handleEdit = (codart : string) => {
+    console.log("Cliccato tasto modifica del codice " + codart);
 
-    handleDelete =(codart:string ) => 
-    {
-      console.log("Cliccato tasto Elimina del codice: ", codart);
 
-      this.articoli$.splice(this.articoli$.findIndex(x=>x.codart === codart),1);
-      console.log(this.articoli$);
-    }
+  }
+
+  handleDelete = (codart : string) => {
+    console.log("Cliccato tasto elimina del codice " + codart);
+
+    this.articoli$.splice(this.articoli$.findIndex(x => x.codart === codart), 1);
+    console.log(this.articoli$);
+
+  }
 
 }
